@@ -1,0 +1,10 @@
+.App {
+  font-family: "Trebuchet MS", sans-serif;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+.alert{
+  text-align: center
+}

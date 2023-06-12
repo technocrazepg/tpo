@@ -1,0 +1,8 @@
+.profile input {
+    border: none;
+    outline: none;
+}
+
+.profile label {
+    color: gray;
+}

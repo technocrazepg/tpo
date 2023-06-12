@@ -1,0 +1,28 @@
+.sidebar {
+  width: 270px;
+  height: 100vh;
+  color: white;
+  position: sticky;
+  /* will always remain on the screen */
+  top: 0;
+}
+
+.navheader {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.navheader .logotext {
+  position: relative;
+  top: 7%;
+}
+
+.navheader .closemenu {
+  position: absolute;
+  right: 0;
+}
+
+.logotext {
+  cursor: pointer;
+}
