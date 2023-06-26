@@ -1,11 +1,12 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import "./login.css";
 import AuthContext from "../../context/auth/authcontext";
 import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+// const BASE_AUTH_URL = process.env.BASE_AUTH_URL;
 // const dotenv = require("dotenv");
-// dotenv.config();
+// dotenv.config(); 
 function Login(props) {
   const [btnTxt, setBtnTxt] = useState("Login"); // text on button: login or signup
   const [newUser, setNewUser] = useState(false); // check if user already exist or not
@@ -40,8 +41,8 @@ function Login(props) {
   // API for login
   const login = async (e) => {
     e.preventDefault(); //to prevent reloading.
-    try {
-      const response = await fetch('http://localhost:5000/auth/login', {
+    try { 
+      const response = await fetch(`http://localhost:5000/auth/login`, {
         method: 'POST',
         credentials: "include",
         withCredentials: true,
@@ -74,7 +75,7 @@ function Login(props) {
   // API for getting details
   const getUserdetails = async (authToken) => {
     try {
-      const response = await fetch('http://localhost:5000/auth/getuserdetails', {
+      const response = await fetch(`http://localhost:5000/auth/getuserdetails`, {
         method: 'POST',
         credentials: "include",
         withCredentials: true,
@@ -108,7 +109,7 @@ function Login(props) {
       setYellowAlert(true);
     else {
       try {
-        const response = await fetch("http://localhost:5000/auth/signup", {
+        const response = await fetch(`http://localhost:5000/auth/signup`, {
           method: 'POST',
           credentials: "include",
           withCredentials: true,
@@ -144,7 +145,6 @@ function Login(props) {
 
   }
 
-  var color;
   const dissappearRed = () => {
     setTimeout(() => {
       setRedAlert(false);
@@ -163,7 +163,6 @@ function Login(props) {
   // functions for showing alerts
   const alerts = () => {
     if (redAlert) {
-      color = "Red";
       return (
         <div class="alert alert-danger" role="alert">
           {errorMSg}<span style={{ cursor: "pointer", float: "right" }} onClick={() => { setRedAlert(false) }}>&times;</span>

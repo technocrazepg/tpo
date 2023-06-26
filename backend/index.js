@@ -5,7 +5,6 @@ const dotenv = require("dotenv");
 dotenv.config();
 conn();
 const app = exp() 
-const port = 5000
 var corOptions={
   origin:true,
   credentials: true
