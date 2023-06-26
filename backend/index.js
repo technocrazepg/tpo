@@ -25,7 +25,7 @@ app.use('/auth', require('./routes/auth'));
 app.use('/contact', require('./routes/contact'));
 
 app.get("/", (req, res) => {
-  res.send('he he he he....sab changa hai !!');
+  res.send('he he he he....sab changa si !!');
 });
 app.listen(process.env.PORT, () => {
   console.log("ho giya hai connection sahi se !!");
