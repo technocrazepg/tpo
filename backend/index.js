@@ -26,6 +26,6 @@ app.use('/contact', require('./routes/contact'));
 app.get("/", (req, res) => {
   res.send('he he he he....sab changa si !!');
 });
-app.listen(process.env.PORT, () => {
+app.listen(process.env.REACT_APP_PORT, () => {
   console.log("ho giya hai connection sahi se !!");
 });

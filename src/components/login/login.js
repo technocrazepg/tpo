@@ -4,9 +4,10 @@ import AuthContext from "../../context/auth/authcontext";
 import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-// const BASE_AUTH_URL = process.env.BASE_AUTH_URL;
 // const dotenv = require("dotenv");
 // dotenv.config(); 
+const BASE_AUTH_URL = process.env.REACT_APP_BASE_AUTH_URL;
+// const SAMPLE = process.env.SAMPLE;
 function Login(props) {
   const [btnTxt, setBtnTxt] = useState("Login"); // text on button: login or signup
   const [newUser, setNewUser] = useState(false); // check if user already exist or not
@@ -42,7 +43,7 @@ function Login(props) {
   const login = async (e) => {
     e.preventDefault(); //to prevent reloading.
     try { 
-      const response = await fetch(`http://localhost:5000/auth/login`, {
+      const response = await fetch(`${BASE_AUTH_URL}/login`, {
         method: 'POST',
         credentials: "include",
         withCredentials: true,
@@ -75,7 +76,7 @@ function Login(props) {
   // API for getting details
   const getUserdetails = async (authToken) => {
     try {
-      const response = await fetch(`http://localhost:5000/auth/getuserdetails`, {
+      const response = await fetch(`${BASE_AUTH_URL}/getuserdetails`, {
         method: 'POST',
         credentials: "include",
         withCredentials: true,
@@ -109,7 +110,7 @@ function Login(props) {
       setYellowAlert(true);
     else {
       try {
-        const response = await fetch(`http://localhost:5000/auth/signup`, {
+        const response = await fetch(`${BASE_AUTH_URL}/signup`, {
           method: 'POST',
           credentials: "include",
           withCredentials: true,

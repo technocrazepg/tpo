@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
-const URI = process.env.MONGODB_CONNECTION_STRING
+const URI = process.env.REACT_APP_MONGODB_CONNECTION_STRING
 const connect = async () => {
   try{
     mongoose.connect(URI)
